@@ -1,14 +1,18 @@
+:root {
+  --color-primary: #e28625;
+}
+
 /* GLOBAL */
 body {
   display: flex;
   flex-direction: column;
-  padding: 0;
+  padding: 24px;
   margin: 0;
-  font-family: "Arial", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  background-color: #fff;
-  color: #222;
+  font-family: "Lexend Deca", "Arial", sans-serif;
+  font-size: 0.9375rem;
+  line-height: 166.667%;
+  background-color: #f2f2f2;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 img {
@@ -71,6 +75,81 @@ select:-webkit-autofill:focus {
   flex-grow: 1;
 }
 
+
+/* CARDS-GROUP */
+.cards-group {
+  flex-shrink: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 57.5rem;
+  margin: 147px auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+/* CARD */
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  padding: 48px;
+  background-color: var(--color-primary);
+}
+
+.card--light-blue {
+  --color-primary: #006971;
+}
+
+.card--dark-green {
+  --color-primary: #004140;
+}
+
+.card__heading {
+  margin-bottom: 25px;
+  font-family: "Big Shoulders Display", "Arial", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #F2F2F2;
+}
+
+.card__img {
+  order: -1;
+  width: 64px;
+  height: 40px;
+  margin-bottom: 35px;
+}
+
+.card__button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.button {
+  display: inline-block;
+  padding: 9px 32px 10px;
+  border: 2px solid #f2f2f2;
+  border-radius: 25px;
+  text-decoration: none;
+  text-align: center;
+  background-color: #f2f2f2;
+  color: var(--color-primary);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+
+.button:active {
+  opacity: 0.6;
+}
+
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (   min--moz-device-pixel-ratio: 2),
@@ -79,4 +158,20 @@ only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
 
+}
+
+@media only screen and (max-width: 50em) {
+  .cards-group {
+    grid-template-columns: auto;
+    margin-top: 88px;
+    margin-bottom: 88px;
+  }
+
+  .card {
+    min-height: auto;
+  }
+
+  .card__text {
+    margin-bottom: 25px;
+  }
 }
